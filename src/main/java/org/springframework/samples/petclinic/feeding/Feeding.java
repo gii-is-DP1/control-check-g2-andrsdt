@@ -36,4 +36,7 @@ public class Feeding extends BaseEntity { // TODO extend baseEntity if not worki
     @NotNull
     @ManyToOne // TODO missing "mappedBy"?
     Pet pet;
+
+    @ManyToOne
+    FeedingType feedingType;
 }
