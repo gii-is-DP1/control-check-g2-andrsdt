@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.validation.ConstraintViolationException;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -18,6 +18,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Table(name = "feedings")
 public class Feeding extends BaseEntity { // TODO extend baseEntity if not working
     // @Id
     // @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +30,7 @@ public class Feeding extends BaseEntity { // TODO extend baseEntity if not worki
     LocalDate startDate;
 
     @NotNull
-    Double weeksDuration;
+    double weeksDuration;
 
     // TODO This is N-1 instead of 1-N?
     @NotNull
