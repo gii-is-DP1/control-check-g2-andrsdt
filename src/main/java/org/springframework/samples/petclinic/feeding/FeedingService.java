@@ -24,7 +24,7 @@ public class FeedingService {
         return this.feedingRepository.findByTypeName(typeName);
     }
 
-    @Transactional(rollbackFor = UnfeasibleFeedingException.class) // TODO check if correct import
+    @Transactional(rollbackFor = UnfeasibleFeedingException.class)
     public Feeding save(Feeding p) throws UnfeasibleFeedingException {
         if (!p.getFeedingType().getPetType().equals(p.getPet().getType())) {
             throw new UnfeasibleFeedingException();

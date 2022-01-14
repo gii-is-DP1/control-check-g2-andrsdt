@@ -20,7 +20,6 @@ public class FeedingTypeFormatter implements Formatter<FeedingType> {
 
     @Override
     public FeedingType parse(String text, Locale locale) throws ParseException {
-        // TODO Auto-generated method stub
         FeedingType feedingType = feedingService.getFeedingType(text);
         if (feedingType == null) {
             throw new ParseException("Type not found: " + text, 0);

@@ -29,6 +29,6 @@ public class FeedingType extends BaseEntity {
 
     @NotNull
     @ManyToOne
-    @JoinColumn(name = "pet_type_id") // TODO needed?
+    @JoinColumn(name = "pet_type_id")
     PetType petType;
 }
